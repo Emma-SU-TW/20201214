@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function index() {
         $titles = Headlines::all();
-        return view ("index",compact("titles"));
+        return view("index",compact("titles"));
     }
 
     public function insert(Request $req) {

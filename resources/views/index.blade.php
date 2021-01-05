@@ -26,7 +26,7 @@
           <a class="nav-link active" aria-current="page" href="/">首頁</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/lotto/">樂透</a>
+          <a class="nav-link" href="/#/">樂透</a>
           </li>
         @guest
         <li class="nav-item">
@@ -46,7 +46,7 @@
   </div>
 </nav>
 @auth
-<form action="/insert" method=post>
+<form action="/insert/" method=POST>
   @csrf
 最新消息: <input type=text size=40 name=title>
 <input type=submit value="新增">
