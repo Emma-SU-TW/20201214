@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Http\Request;
 use App\Models\Headlines;
 
 class MainController extends Controller
 {
+   //
     public function index() {
         $titles = Headlines::all();
         return view("index",compact("titles"));
@@ -26,5 +26,11 @@ class MainController extends Controller
     public function logout() {
     	Auth::logout();
     	return redirect("/");	
-    }
+	}
+	
+	function delete($id){
+		$data = Headlines::find($id);
+		$data->delete();
+		return redirect('/');
+	 }
 }

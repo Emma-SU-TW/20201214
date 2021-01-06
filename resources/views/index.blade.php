@@ -14,7 +14,6 @@
   <div class="container">
     <h1>蘇亭菲的期末網站</h1>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    
   <div class="container-fluid">
     <a class="navbar-brand" href="#">CE1093286</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +25,7 @@
           <a class="nav-link active" aria-current="page" href="/">首頁</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/#/">樂透</a>
+          <a class="nav-link" href="/lotto">樂透</a>
           </li>
         @guest
         <li class="nav-item">
@@ -46,22 +45,22 @@
   </div>
 </nav>
 @auth
-<form action="/insert/" method=POST>
+<form action="/insert" method=POST>
   @csrf
 最新消息: <input type=text size=40 name=title>
 <input type=submit value="新增">
 </form>
 @endauth
 <table class="table table-striped">
-   <tr>
-       <th>編號</th><th>最新消息</th><th>時間</th>
-   </tr>    
+
+   <tr><th>編號</th><th>最新消息</th><th>更新時間</th>
 @foreach ($titles as $item)
-  <tr>
-     <td>{{ $item->id }}</td>
-     <td>{{ $item->title }}</td>
-     <td>{{ $item->created_at }}</td>
-     <td>刪除</td>
+
+<<tr>
+         <td>{{$item->id}}</td>
+         <td>{{ $item->title}}</td>
+         <td>{{$item->created_at}}</td>
+         <td><a href={{'delete/' .$item->id}}><button type="button" class="btn btn-info">刪除</button></a></td>
  </tr>
 @endforeach
 </table>

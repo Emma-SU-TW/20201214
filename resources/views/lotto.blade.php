@@ -3,17 +3,21 @@
 <style>
   body {
       font-family:標楷體;
+     
   }
+ 
 </style>
 </head>
 <body>
-<h2>今日你的幸運數字如下</h2>
-<hr>
+
+<h2>以下是我的樂透號碼</h2>
 <ul>
-@foreach ($numbers as $number)
-<li>{{ $number  }}</li>
+@foreach ($numbers as $item)
+<li>{{ $item }}</li>
 @endforeach
 </ul>
-</hr>
+<h1>特別號碼是</h1>
+<li><h1>{{$lucky_number}}<h1></li>
+@include('layouts.footer')
 </body>
 </html>
