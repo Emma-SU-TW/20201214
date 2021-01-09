@@ -1,8 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\MainController;
-// use App\Http\Controllers\PlayListController;
+
 use App\Http\Controllers\Lottocontroller;
 
 Route::get('/', [MainController::class, "index"]);
